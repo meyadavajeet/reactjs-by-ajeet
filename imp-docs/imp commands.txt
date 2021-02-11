@@ -1,0 +1,20 @@
+npx create-react-app my-app
+cd my-app
+npm install react-scripts@2.1.8
+npm start
+
+
+
+https://www.pluralsight.com/guides/how-to-integrate-bootstrap-with-reactjs
+
+
+npmjs.com/package/bootstrap/
+
+react-router-dom
+	
+#install jquery
+npm install -S jquery
+
+#import jquery in app.js file
+import $ from 'jquery';
+

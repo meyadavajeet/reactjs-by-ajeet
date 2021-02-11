@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Destructuring in ecma script</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//create array
+	const favProgLang = ['javascript','c','c++','php','c#'];
+	//es5
+	//how we call value of array in before es6
+	// var top1 = favProgLang[0];
+	// var top2 = favProgLang[2];
+	// var top3 = favProgLang[3];
+
+	// console.log("my fav programing language is " + top1);
+
+// after es6
+// let [top1,top2,top3,top4,top5] = favProgLang
+// console.log("my fav programing language is " + top1);
+// console.log("my next fav programing language is " + top5);
+
+//if we want only last element  of array
+//then please write first variale for the element  and skip by giving comma(,) to the second last element and now write the last element variable name
+
+
+let [top1,,,,lastele] = favProgLang;
+console.log(
+	`my fav pr language ${top1} 
+	and least fav programing language
+	${lastele}`
+	);
+
+
+</script>
+</body>
+</html>

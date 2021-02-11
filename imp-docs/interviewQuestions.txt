@@ -1,0 +1,146 @@
+Interview Questions
+
+“Props” is a special keyword in React, which stands for properties and is being used for passing data from one component to another. Furthermore, props data is read-only, which means that data coming from the parent should not be changed by child components.
+
+Props v/s react
+props are read-only  where as state chages can be asynchronous
+props can be modified  where as state can be modified using this.setState
+
+
+
+State is the place where the data comes from. We should always try to make our state as simple as possible and minimize the number of stateful components. 
+If we have, for example, ten components that need data from the state, we should create one container component that will keep the state for all of them.
+
+Using State
+The following sample code shows how to create a stateful component using EcmaScript2016 syntax.
+
+App.jsx
+import React from 'react';
+
+class App extends React.Component {
+   constructor(props) {
+      super(props);
+		
+      this.state = {
+         header: "Header from state...",
+         content: "Content from state..."
+      }
+   }
+   render() {
+      return (
+         <div>
+            <h1>{this.state.header}</h1>
+            <h2>{this.state.content}</h2>
+         </div>
+      );
+   }
+}
+export default App;
+main.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+
+ReactDOM.render(<App />, document.getElementById('app'));
+This will produce the following result.
+
+React State Simple
+ReactJS - Props Overview
+The main difference between state and props is that props are immutable. This is why the container component should define the state that can be updated and changed, while the child components should only pass data from the state using props.
+
+Using Props
+When we need immutable data in our component, we can just add props to reactDOM.render() function in main.js and use it inside our component.
+
+App.jsx
+import React from 'react';
+
+class App extends React.Component {
+   render() {
+      return (
+         <div>
+            <h1>{this.props.headerProp}</h1>
+            <h2>{this.props.contentProp}</h2>
+         </div>
+      );
+   }
+}
+export default App;
+main.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+
+ReactDOM.render(<App headerProp = "Header from props..." contentProp = "Content
+   from props..."/>, document.getElementById('app'));
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########################### state ##########################
+
+state is similar to props the only difference is state can be change where as props can't be changed.
+
+
+	App.jsx
+	
+	import PropTypes from 'prop-types';
+	import React from 'react';
+	import ReactDOM from 'react-dom';
+	
+	
+	class App extends React.Componet
+	
+	constructor(){
+	super();
+	this.state = {
+		count: 0;
+		}
+	}
+	btnClick(){
+		this.setState({
+		 count : this.state.count +1
+		});
+	}
+	
+	render(){
+		return(
+		 <div>
+			<h1> Value: {this.state.count}</h1>
+			<button onClick={this.btnClick.bind(this)} >Increment by 1</button>
+		</div>
+		);
+	}
+	
+	
+	
+	
+	
+	################ Components life cycle #############
+	there are seven events takes place while componentes life cycle 
+	
+	1. componentWillMount - is executed before rendering 
+	2. componentDitMount
+	3. componentWillRecieveProps
+	4. shouldComponentUpdate
+	5. componentWillUpdate
+	6. componentDidUpdate
+	7. componentWillUnmount
+	
+	
+	
+	
+	
+	
